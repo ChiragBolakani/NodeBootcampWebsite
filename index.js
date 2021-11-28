@@ -3,6 +3,8 @@ const app = express();
 const appRoutes = require("./routes/routes");
 const authRoutes = require("./routes/auth");
 const session = require('express-session');
+require("dotenv").config();
+
 
 app.set("view engine", "ejs");
 
