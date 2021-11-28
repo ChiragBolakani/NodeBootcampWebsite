@@ -24,7 +24,7 @@ const sendEmail = async (toEmail) => {
       from: `"Chirag Bolakani" <${config.trasporterSender}>`,
       to: toEmail,
       subject: "Newsletter Subscribed!",
-      html: "<b>Mast wala mail abhi wala</b>",
+      html: "<b>Thankyou for Subscribing to our newsletter!</b>",
     },
     (err, info) => {
       if (err) {

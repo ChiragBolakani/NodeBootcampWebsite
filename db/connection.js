@@ -1,7 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
+require("dotenv").config();
 
-const url = `mongodb+srv://ChiragBolakani:chirag2016@cluster0.44xzo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-const dbName = "myFirstDatabase";
+const url = process.env.DB_URI;
+const dbName = process.env.DB_NAME;
 
 const client = new MongoClient(url);
 

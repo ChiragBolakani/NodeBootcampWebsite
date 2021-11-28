@@ -12,7 +12,7 @@ router.get('/google', async (req,res)=>{
     req.session.authCode = req.query.code;
     await axios({
       method: 'post',
-      url: `https://oauth2.googleapis.com/token?code=${req.session.authCode}&client_id=820772511530-omo1lv7i4o3smjkbgqvf8ti4dr7d48bh.apps.googleusercontent.com&client_secret=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&redirect_uri=http://localhost:3000/auth/google&grant_type=authorization_code&`,
+      url: `https://oauth2.googleapis.com/token?code=${req.session.authCode}&client_id=820772511530-omo1lv7i4o3smjkbgqvf8ti4dr7d48bh.apps.googleusercontent.com&client_secret=${process.env.CLIENT_SECRET}&redirect_uri=http://localhost:3000/auth/google&grant_type=authorization_code&`,
     }).then(function (response){
       console.log(response.data);
       req.session.access_token = response.data.access_token;
